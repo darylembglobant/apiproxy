@@ -49,8 +49,8 @@ pipeline {
             }
             steps {
                     withMaven (maven:'maven'){
-                        sh "mvn install -Ptest -Dorg=dynamic-branch-375904 -Denv=eval -Dfile=${e463a33a-7a9e-4a90-ae5d-2129037386c8
-}"
+                        sh 'mvn install -Ptest -Dorg=dynamic-branch-375904 -Denv=eval -Dfile=${e463a33a-7a9e-4a90-ae5d-2129037386c8}'
+                        }
                     } // withMaven will discover the generated Maven artifacts, JUnit Surefire & FailSafe reports and FindBugs reports
                 }
             
