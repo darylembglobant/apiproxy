@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ExtractVariables continueOnError="false" enabled="true" name="EV-gitdemo">
+  <DisplayName>EV-gitdemo</DisplayName>
+  <JSONPayload>
+    <Variable name="firstName" type="string">
+      <JSONPath>$.firstName</JSONPath>
+    </Variable>
+    <Variable name="lastName" type="string">
+      <JSONPath>$.lastName</JSONPath>
+    </Variable>
+    <Variable name="city" type="string">
+      <JSONPath>$.city</JSONPath>
+    </Variable>
+    <Variable name="state" type="string">
+      <JSONPath>$.state</JSONPath>
+    </Variable>
+  </JSONPayload>
+  <Source>response</Source>
+  <VariablePrefix>apigee</VariablePrefix>
+  <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+</ExtractVariables>

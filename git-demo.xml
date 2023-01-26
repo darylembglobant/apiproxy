@@ -1,0 +1,19 @@
+<APIProxy revision="9" name="git-demo">
+    <DisplayName></DisplayName>
+    <Description></Description>
+    <CreatedAt>1671587923632</CreatedAt>
+    <LastModifiedAt>1671587923632</LastModifiedAt>
+    <BasePaths>/v1/git</BasePaths>
+    <Policies>
+        <Policy>VA-gitdemo</Policy>
+        <Policy>J2X-gitdemo</Policy>
+        <Policy>EV-gitdemo</Policy>
+        <Policy>AM-gitdemo</Policy>
+    </Policies>
+    <ProxyEndpoints>
+        <ProxyEndpoint>default</ProxyEndpoint>
+    </ProxyEndpoints>
+    <TargetEndpoints>
+        <TargetEndpoint>default</TargetEndpoint>
+    </TargetEndpoints>
+</APIProxy>

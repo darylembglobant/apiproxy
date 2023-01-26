@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage continueOnError="false" enabled="true" name="AM-gitdemo">
+  <DisplayName>AM-gitdemo</DisplayName>
+  <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+  <AssignTo createNew="false" transport="http" type="response"/>
+  <Set>
+    <Headers/>
+    <Payload>
+            [
+   {
+      "customer_name":"{apigee.firstName}",
+      "customer_lastname": "{apigee.lastName}",
+      "customer_city":"{apigee.city}"
+   }
+]
+        </Payload>
+  </Set>
+</AssignMessage>
