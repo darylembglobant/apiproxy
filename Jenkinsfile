@@ -48,13 +48,10 @@ pipeline {
                 branch 'develop'
             }
             steps {
-                sh """
-                echo "Building Artifact"
-                """
-
-                sh """
-                echo "Deploying Code"
-                """
+                    withMaven {
+                    sh "mvn clean install"
+                    } // withMaven will discover the generated Maven artifacts, JUnit Surefire & FailSafe reports and FindBugs reports
+                }
             }
         }
 
