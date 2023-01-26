@@ -49,7 +49,8 @@ pipeline {
             }
             steps {
                     withMaven {
-                    sh "mvn clean install"
+                        maven: "maven",
+                        sh "mvn clean install"
                     } // withMaven will discover the generated Maven artifacts, JUnit Surefire & FailSafe reports and FindBugs reports
                 }
             
