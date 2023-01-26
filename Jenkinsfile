@@ -22,11 +22,11 @@ pipeline {
 
         stage('Code Checkout') {
             steps {
-                checkout([
-                    $class: 'GitSCM', 
-                    branches: [[name: '*/master']], 
-                    userRemoteConfigs: [[url: 'https://github.com/darylembglobant/apiproxy.git']]
-                ])
+                checkout changelog: false,
+                    scm: scmGit(userRemoteConfigs: [
+                         [ credentialsId: 'github-ssh',
+                           url: 'git@github.com:darylembglobant/apiproxy.git' ]
+                         ])
             }
         }
 
