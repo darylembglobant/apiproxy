@@ -45,7 +45,7 @@ pipeline {
 
         stage('Build Deploy Code') {
             when {
-                branch 'develop'
+                branch 'master'
             }
             steps {
                     withMaven {
