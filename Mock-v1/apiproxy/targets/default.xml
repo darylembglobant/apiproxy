@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <TargetEndpoint name="default">
+    <Description/>
+    <FaultRules/>
     <PreFlow name="PreFlow">
         <Request/>
         <Response/>
     </PreFlow>
-    <Flows/>
     <PostFlow name="PostFlow">
         <Request/>
-        <Response>
-        </Response>
+        <Response/>
     </PostFlow>
+    <Flows/>
     <HTTPTargetConnection>
-        <URL>https://mocktarget.apigee.net/json</URL>
+        <Properties/>
+        <URL>https://replaced_by_config_json</URL>
     </HTTPTargetConnection>
 </TargetEndpoint>
