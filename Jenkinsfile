@@ -22,11 +22,7 @@ pipeline {
 
         stage('Code Checkout') {
             steps {
-                checkout changelog: false,
-                    scm: scmGit(userRemoteConfigs: [
-                         [ credentialsId: 'github-ssh',
-                           url: 'git@github.com:darylembglobant/apiproxy.git' ]
-                         ])
+                checkout scm
             }
         }
 
