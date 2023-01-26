@@ -50,7 +50,7 @@ pipeline {
             steps {
                     withMaven (maven:'maven'){
                             configFileProvider(
-                                [configFile(fileId: 'service_account_file', variable: 'SERVICE_ACCOuNT_FILE')]) {
+                                [configFile(fileId: 'e463a33a-7a9e-4a90-ae5d-2129037386c8', variable: 'SERVICE_ACCOuNT_FILE')]) {
                                 sh 'mvn install -Ptest -Dorg=dynamic-branch-375904 -Denv=eval -Dfile=$SERVICE_ACCOuNT_FILE'
                         }
                     } // withMaven will discover the generated Maven artifacts, JUnit Surefire & FailSafe reports and FindBugs reports
