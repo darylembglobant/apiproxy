@@ -23,6 +23,7 @@ pipeline {
         stage('Code Checkout') {
             steps {
                 checkout scm
+                sh "ls -lat"
             }
         }
 
