@@ -48,14 +48,13 @@ pipeline {
                 branch 'master'
             }
             steps {
-                    dir('/*.-v1/'){
+                    sh "cd $(ls | head -1)"
                         withMaven (maven:'maven'){
                                 configFileProvider(
                                     [configFile(fileId: 'c11a5e2b-9ff5-4254-9208-6981da319148', variable: 'SERVICE_ACCOuNT_FILE')]) {
                                     sh 'mvn install -Ptest -Dorg=jenkins-test-375820 -Denv=eval -Dfile=$SERVICE_ACCOuNT_FILE'
                             }
                         }
-                    }
             }
         }
 
