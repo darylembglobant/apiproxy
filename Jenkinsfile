@@ -51,8 +51,8 @@ pipeline {
                     dir('Mock-v1'){
                         withMaven (maven:'maven'){
                                 configFileProvider(
-                                    [configFile(fileId: 'e463a33a-7a9e-4a90-ae5d-2129037386c8', variable: 'SERVICE_ACCOuNT_FILE')]) {
-                                    sh 'mvn install -Ptest -Dorg=dynamic-branch-375904 -Denv=eval -Dfile=$SERVICE_ACCOuNT_FILE'
+                                    [configFile(fileId: 'c11a5e2b-9ff5-4254-9208-6981da319148', variable: 'SERVICE_ACCOuNT_FILE')]) {
+                                    sh 'mvn install -Ptest -Dorg=jenkins-test-375820 -Denv=eval -Dfile=$SERVICE_ACCOuNT_FILE'
                             }
                         }
                     }
