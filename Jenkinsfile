@@ -4,6 +4,7 @@ pipeline {
     environment {
         API_NAME = 'Mock-v1'
         API_ORG = 'jenkins-test-375820'
+        FILE_ID = 'c11a5e2b-9ff5-4254-9208-6981da319148'
     }
     options {
         buildDiscarder logRotator( 
@@ -51,7 +52,7 @@ pipeline {
                     dir(API_NAME){
                         withMaven (maven:'maven'){
                                 configFileProvider(
-                                    [configFile(fileId: 'c11a5e2b-9ff5-4254-9208-6981da319148', variable: 'SERVICE_ACCOUNT_FILE')]) {
+                                    [configFile(fileId: FILE_ID, variable: 'SERVICE_ACCOUNT_FILE')]) {
                                     sh 'mvn install -Ptest -Dorg=${API_ORG} -Denv=${GIT_BRANCH} -Dfile=$SERVICE_ACCOUNT_FILE'
                             }
                         }
