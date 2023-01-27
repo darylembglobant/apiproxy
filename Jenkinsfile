@@ -52,7 +52,7 @@ pipeline {
                     dir(API_NAME){
                         withMaven (maven:'maven'){
                                 configFileProvider(
-                                    [configFile(fileId: '${FILE_ID}', variable: 'SERVICE_ACCOUNT_FILE')]) {
+                                    [configFile(fileId: FILE_ID, variable: 'SERVICE_ACCOUNT_FILE')]) {
                                     sh 'mvn install -Ptest -Dorg=${API_ORG} -Denv=${GIT_BRANCH} -Dfile=$SERVICE_ACCOUNT_FILE'
                             }
                         }
