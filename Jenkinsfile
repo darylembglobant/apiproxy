@@ -47,9 +47,6 @@ pipeline {
         }
 
         stage('Build Deploy Code') {
-            when {
-                branch 'eval'
-            }
             steps {
                     dir(API_NAME){
                         withMaven (maven:'maven'){
@@ -61,6 +58,5 @@ pipeline {
                     }
             }
         }
-
     }   
 }
