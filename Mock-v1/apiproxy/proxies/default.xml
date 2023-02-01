@@ -15,7 +15,7 @@
             <Description>View API affirmation</Description>
             <Request/>
             <Response/>
-            <Condition>(proxy.pathsuffix MatchesPath "/niceapis") and (request.verb = "GET")</Condition>
+            <Condition>(proxy.pathsuffix MatchesPath "/apis") and (request.verb = "GET")</Condition>
         </Flow>
         <Flow name="View XML response">
             <Description>View XML response</Description>
