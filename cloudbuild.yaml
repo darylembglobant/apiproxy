@@ -1,11 +1,12 @@
 steps:
   - name: 'gcr.io/cloud-builders/gcloud'
     entrypoint: 'bash'
+    dir: 'Mock-v1'
     args:
       - '-c'
       - |
         _ACCESS_TOKEN=$(gcloud auth print-access-token)
-        echo "$_ACCESS_TOKEN" > /workspace/access_token.txt
+        echo "$_ACCESS_TOKEN" > access_token.txt
   - name:  'gcr.io/cloud-builders/mvn'
     dir: 'Mock-v1'
     entrypoint: 'bash'
@@ -14,6 +15,6 @@ steps:
       - '-Ptest'
       - '-Dorg=$_ORG_NAME'
       - '-Denv=$_ENV_NAME'
-      - '-Dbearer=$(cat /workspace/access_token)'
+      - '-Dbearer=$(cat access_token)'
 options:
   logging: CLOUD_LOGGING_ONLY
