@@ -8,6 +8,7 @@ steps:
         echo "$_ACCESS_TOKEN" > /workspace/access_token.txt
   - name:  'gcr.io/cloud-builders/mvn'
     dir: 'Mock-v1'
+    entrypoint: 'bash'
     args:
       - install
       - '-Ptest'
