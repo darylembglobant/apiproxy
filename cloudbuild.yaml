@@ -4,7 +4,8 @@ steps:
     args:
       - mvn
       - install
-      - Ptest
+      - P
+      - test
       - '-Dorg=$_ORG_NAME'
       - '-Denv=$_ENV_NAME'
       - '-Dbearer=$(gcloud auth print-access-token)'
