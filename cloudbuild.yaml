@@ -1,0 +1,14 @@
+steps:
+- name: 'gcr.io/cloud-builders/gcloud'
+  entrypoint: 'bash'
+  args:
+  - '-c'
+  - |
+    gcloud auth activate-service-account --key-file=$$GOOGLE_APPLICATION_CREDENTIALS
+    gcloud config set project $PROJECT_ID
+    gcloud services enable apigee.googleapis.com
+    gcloud apigee environments describe $ENV_NAME --organization=$ORG_NAME || gcloud apigee environments create $ENV_NAME --organization=$ORG_NAME
+    gcloud builds submit --tag gcr.io/$PROJECT_ID/my-api
+- name: 'gcr.io/apigee-base/apigee-remote-service-cli:latest'
+  args: ['deploy', '-u', '$USER', '-p', '$PASS', '-o', '$ORG_NAME', '-e', '$ENV_NAME', '-n', 'my-api', '-d', 'gcr.io/$PROJECT_ID/my-api', '-V']
+timeout: '3600s'
