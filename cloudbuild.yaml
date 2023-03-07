@@ -14,6 +14,6 @@ steps:
       - '-Ptest'
       - '-Dorg=$_ORG_NAME'
       - '-Denv=$_ENV_NAME'
-      - '-Dfile=//secretmanager.googleapis.com/projects/255657685440/secrets/service-account-apigee-key/versions/1'
+      - '-Dfile=secretmanager.googleapis.com/projects/255657685440/secrets/service-account-apigee-key/versions/1'
 options:
   logging: CLOUD_LOGGING_ONLY
