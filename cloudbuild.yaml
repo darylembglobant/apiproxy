@@ -1,5 +1,6 @@
 steps:
   - name: 'maven:3-jdk-11'
+    dir: 'Mock-v1'
     args:
       - mvn
       - install
