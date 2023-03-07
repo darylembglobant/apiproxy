@@ -20,5 +20,5 @@ options:
   logging: CLOUD_LOGGING_ONLY
 availableSecrets:
   secretManager:
-    - versionName: $SA_FILE
+    - versionName: $_SA_FILE
       env: 'SERVICE_ACCOUNT_FILE'
