@@ -1,4 +1,10 @@
 steps:
+  - name: 'gcr.io/cloud-builders/gcloud'
+    entrypoint: 'bash'
+    args:
+      - '-c'
+      - |
+        ACCESS_TOKEN=$(gcloud auth print-access-token)
   - name: 'maven:3-jdk-11'
     dir: 'Mock-v1'
     args:
@@ -7,6 +13,7 @@ steps:
       - '-Ptest'
       - '-Dorg=$_ORG_NAME'
       - '-Denv=$_ENV_NAME'
-      - '-Dbearer=$(gcloud auth print-access-token)'
+      - '-Dbearer=$(ACCESS_TOKEN)'
+
 options:
   logging: CLOUD_LOGGING_ONLY
