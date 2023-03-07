@@ -5,7 +5,9 @@ steps:
       - '-c'
       - |
         ACCESS_TOKEN=$(gcloud auth print-access-token)
-        echo "ACCESS_TOKEN" > /workspace/access_token
+        echo "$ACCESS_TOKEN" > /workspace/access_token
+    env:
+      - 
   - name: 'maven:3-jdk-11'
     dir: 'Mock-v1'
     args:
