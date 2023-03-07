@@ -19,5 +19,6 @@ steps:
 options:
   logging: CLOUD_LOGGING_ONLY
 availableSecrets:
-  - versionName: projects/255657685440/secrets/service-account-apigee-key/versions/1
-    env: 'SERVICE_ACCOUNT_FILE'
+  secretManager:
+    - versionName: projects/255657685440/secrets/service-account-apigee-key/versions/1
+      env: 'SERVICE_ACCOUNT_FILE'
