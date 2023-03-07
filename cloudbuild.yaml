@@ -20,5 +20,5 @@ options:
   logging: CLOUD_LOGGING_ONLY
 availableSecrets:
   secretManager:
-    - versionName: projects/255657685440/secrets/service-account-apigee-key/versions/1
+    - versionName: $SA_FILE
       env: 'SERVICE_ACCOUNT_FILE'
