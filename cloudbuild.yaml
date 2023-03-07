@@ -5,6 +5,7 @@ steps:
       - '-c'
       - |
         ACCESS_TOKEN=$(gcloud auth print-access-token)
+        echo "ACCESS_TOKEN" > /workspace/access_token
   - name: 'maven:3-jdk-11'
     dir: 'Mock-v1'
     args:
@@ -13,6 +14,6 @@ steps:
       - '-Ptest'
       - '-Dorg=$_ORG_NAME'
       - '-Denv=$_ENV_NAME'
-      - '-Dbearer=$$ACCESS_TOKEN'
+      - '-Dbearer=$(cat /workspace/access_token)'
 options:
   logging: CLOUD_LOGGING_ONLY
