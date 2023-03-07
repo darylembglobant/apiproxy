@@ -4,7 +4,7 @@ steps:
   args:
   - '-c'
   - |
-    gcloud auth activate-service-account --key-file=$$GOOGLE_APPLICATION_CREDENTIALS
+    gcloud auth activate-service-account --key-file=$GOOGLE_APPLICATION_CREDENTIALS
     gcloud config set project $PROJECT_ID
     gcloud services enable apigee.googleapis.com
     gcloud apigee environments describe $ENV_NAME --organization=$ORG_NAME || gcloud apigee environments create $ENV_NAME --organization=$ORG_NAME
