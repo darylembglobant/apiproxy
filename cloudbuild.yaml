@@ -1,20 +1,11 @@
 steps:
-  - name: 'gcr.io/cloud-builders/gcloud'
-    entrypoint: 'bash'
-    dir: 'Mock-v1'
-    args:
-      - '-c'
-      - |
-        _ACCESS_TOKEN=$(gcloud auth print-access-token)
-        echo "$_ACCESS_TOKEN" > access_token.txt
-  - name:  'gcr.io/cloud-builders/mvn'
-    dir: 'Mock-v1'
-    entrypoint: 'bash'
-    args:
-      - install
-      - '-Ptest'
-      - '-Dorg=$_ORG_NAME'
-      - '-Denv=$_ENV_NAME'
-      - '-Dbearer=$(cat access_token)'
+- name: gcr.io/cloud-builders/gcloud
+  entrypoint: 'bash'
+  args: [ '-c', 'gcloud auth application-default print-access-token > token.txt' ]
+  dir: 'Mock-v1'
+- name: 'gcr.io/cloud-builders/mvn'
+  entrypoint: 'bash'
+  args: ['-c', 'mvn install -Ptest -Dorg=${_ORG_NAME} -Denv=${_ENV_NAME} -Dbearer=$(cat token.txt)']
+  dir: 'Mock-v1'
 options:
   logging: CLOUD_LOGGING_ONLY
