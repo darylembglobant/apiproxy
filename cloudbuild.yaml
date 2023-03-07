@@ -9,6 +9,11 @@ steps:
   - name:  'gcr.io/cloud-builders/mvn'
     dir: 'Mock-v1'
     args:
-      ['mvn', 'install', '-Ptest', '-Dorg=$_ORG_NAME', '-Denv=$_ENV_NAME', '-Dbearer=$(cat /workspace/access_token.txt)']
+      - mvn
+      - install
+      - '-Ptest'
+      - '-Dorg=$_ORG_NAME'
+      - '-Denv=$_ENV_NAME'
+      - '-Dbearer=$(cat /workspace/access_token)'
 options:
   logging: CLOUD_LOGGING_ONLY
