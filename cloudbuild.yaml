@@ -14,7 +14,7 @@ steps:
       - '-Ptest'
       - '-Dorg=$_ORG_NAME'
       - '-Denv=$_ENV_NAME'
-      - '-Dbearer=$(ACCESS_TOKEN)'
+      - '-Dbearer=$ACCESS_TOKEN'
 
 options:
   logging: CLOUD_LOGGING_ONLY
