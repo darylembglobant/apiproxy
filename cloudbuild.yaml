@@ -15,8 +15,6 @@ steps:
       - '-Dorg=$_ORG_NAME'
       - '-Denv=$_ENV_NAME'
       - '-Dfile=$$SERVICE_ACCOUNT_FILE'
-    secretEnv:
-      - SERVICE_ACCOUNT_FILE: projects/255657685440/secrets/service-account-apigee-key/versions/1
 options:
   logging: CLOUD_LOGGING_ONLY
 secrets:
